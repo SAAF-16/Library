@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 5px;
+  background-color: aqua;
+}
+#top {
+  height: 25%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#main_title {
+  background-color: red;
+  height: 45%;
+  width: 60%;
+  align-self: center;
+}
+#searchbar_div {
+  background-color: aliceblue;
+  height: 45%;
+  width: 90%;
+  align-self: center;
+}
+#middle {
+  height: 40%;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+#middle_title {
+  height: 15%;
+  background-color: bisque;
+}
+#middle_content {
+  display: flex;
+  height: 85%;
+  background-color: blue;
+}
+#add_new {
+  width: 25%;
+}
+#last_added {
+  width: 75%;
+}
+#bottom {
+  height: 35%;
+  background-color: aquamarine;
+  display: flex;
+}
+#book_categories {
+  width: 25%;
+}
+#category_books {
+  width: 75%;
+}
