@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
 </head>
 <link rel="stylesheet" href="css/style.css">
+
 <body>
     <div id="top">
         <div id="main_title">
-
+            <h1>My Library</h1>
         </div>
+        <!-- doppia funzione che se scrivo qualcosa cambia il prossimo div in un div di ricerca -->
         <div id="searchbar_div">
-
+            <input type="text" placeholder="Search a book..." id="search_text" name="search_text">
         </div>
     </div>
     <div id="middle">
         <div id="middle_title">
-
+            <p class="last_added">Last added</p>
+            <p class="search_results">Search results</p>
         </div>
-        <div id="middle_content">
+        <div id="middle_lasts">
             <div id="add_new">
-
+                <div id="bAdd_new" class="book new"></div>
             </div>
             <div id="last_added">
+
+            </div>
+        </div>
+        <div id="middle_search" class="search_results">
+            <div id="search_results">
 
             </div>
         </div>
@@ -37,6 +45,40 @@
 
         </div>
     </div>
+    <div id="overlay" class="hidden">
+        <div id="div_new_book" class="hidden">
+            <label for="bTitle">Title</label><br>
+            <input type="text" id="bTitle" name="bTitle"><br>
+            <label for="bPages">Pages</label><br>
+            <input type="number" id="bPages" name="bPages"><br>
+            <label for="bDescription">Description</label><br>
+            <textarea id="bDescription" name="bDescription" cols="30" rows="20"
+                placeholder="Enter your comments or suggestions here.."></textarea><br>
+            <label for="bYear">Year</label><br>
+            <input type="number" id="bYear" name="bYear"><br>
+            <label for="bAuthor">Author</label><br>
+            <input type="text" id="bAuthor" name="bAuthor"><br>
+            <label for="bGenre">Genre</label><br>
+            <select name="bGenre" id="bGenre">
+                <option disabled selected value="">Select an option </option>
+                <option value="music">Adventure</option>
+                <option value="music">Drama</option>
+                <option value="music">Romance</option>
+                <option value="music">Sci-Fi</option>
+                <option value="music">Action</option>
+                <option value="music">Fantasy</option>
+                <option value="music">Horror</option>
+                <option value="music">Historical</option>
+                <option value="music">Children</option>
+                <option value="music">Thriller</option>
+            </select><br><br>
+            <input type="button" id="add_new_book" value="add new book">
+            <br>
+            <input type="button" id="cancel" value="cancel">
+        </div>
+    </div>
+    <div id="show_book"></div>
 </body>
 <script src="src/script.js"></script>
+
 </html>

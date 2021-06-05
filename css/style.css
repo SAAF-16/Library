@@ -6,11 +6,15 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0px;
-  padding: 5px;
+  padding: 20px;
   background-color: aqua;
 }
+p {
+  margin: 0;
+}
+
 #top {
-  height: 25%;
+  height: 20%;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -20,12 +24,16 @@ body {
   height: 45%;
   width: 60%;
   align-self: center;
+  text-align: center;
 }
+
 #searchbar_div {
   background-color: aliceblue;
   height: 45%;
   width: 90%;
   align-self: center;
+  border-radius: 50px;
+  padding: 10px 30px;
 }
 #middle {
   height: 40%;
@@ -37,19 +45,84 @@ body {
   height: 15%;
   background-color: bisque;
 }
-#middle_content {
+#middle_lasts {
   display: flex;
   height: 85%;
   background-color: blue;
+}
+.book {
+  height: 80%;
+  width: 200px;
+  background-color: beige;
+  margin: 20px;
+  border-radius: 20px;
+}
+.new {
+  background-color: greenyellow;
 }
 #add_new {
   width: 25%;
 }
 #last_added {
   width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+}
+#middle_search {
+  height: 85%;
+}
+#search_text {
+  height: 100%;
+  width: 100%;
+  border-color: white;
+  outline: none;
+  font-size: 30px;
+}
+.last_added {
+}
+.search_results {
+  display: none;
+}
+#div_new_book.hidden {
+  z-index: -1;
+  opacity: 0;
+  transition: 200ms;
+}
+#overlay.hidden {
+  z-index: -1;
+  opacity: 0;
+}
+#overlay {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.374);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#div_new_book {
+  transition: 200ms;
+  opacity: 1;
+  height: 80vh;
+  width: 30vw;
+  background-color: yellow;
+  margin: 80px auto;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+textarea {
+  resize: none;
 }
 #bottom {
-  height: 35%;
+  height: 40%;
   background-color: aquamarine;
   display: flex;
 }
