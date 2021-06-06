@@ -9,7 +9,7 @@ class Book {
         this.genre = genre;
     }
 }
-
+let activeCategory = "Horror";
 const last_added = document.querySelector("#last_added");
 const bAdd_new = document.getElementById("bAdd_new");
 const div_new_book = document.getElementById("div_new_book");
@@ -18,6 +18,15 @@ bAdd_new.onclick = () => {
     div_new_book.classList.toggle("hidden");
     overlay.classList.toggle("hidden");
 };
+
+
+const book_categories = document.getElementById("book_categories");
+book_categories.addEventListener("click", (e) => {
+    activeCategory = e.target.dataset.category;
+    updateBooks(category_books, 1);
+});
+const category_books = document.getElementById("category_books");
+
 
 
 let myLibrary = [];
@@ -36,15 +45,23 @@ function addToLibrary(book) {
 }
 
 
-updateBooks();
-function updateBooks() {
-    last_added.innerHTML = "";
-    for (let i = myLibrary.length - 1; i >= 0; i--) {
+updateBooks(last_added, 0);
+updateBooks(category_books, 1);
 
-        let book = document.createElement("div");
-        book.classList.add("book");
-        book.textContent = `${myLibrary[i].title}`;
-        last_added.appendChild(book);
+
+
+function updateBooks(doc, active) {
+    doc.innerHTML = "";
+    for (let i = myLibrary.length - 1; i >= 0; i--) {
+        if ((active == 0) || (activeCategory == "all") || (`${myLibrary[i].genre}` == activeCategory)) {
+            let book = document.createElement("div");
+            book.classList.add("book");
+            book.addEventListener("click", (e) => {
+                console.log(e.target);
+            });
+            book.textContent = `${myLibrary[i].title}`;
+            doc.appendChild(book);
+        }
 
 
     }
