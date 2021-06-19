@@ -8,14 +8,30 @@
 overflow: overlay; */
 
 body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0px;
-  padding: 10px 50px;
-  background-color: aqua;
+  height: 98vh;
+  width: 96vw;
+  margin: 2vh auto 0px;
+  padding: 0px;
+  background-color: rgb(64, 64, 228);
+  max-width: 1250px;
 }
 p {
   margin: 0;
+}
+h1 {
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
 }
 
 #top {
@@ -23,9 +39,12 @@ p {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  background: rgb(64, 64, 228);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 #main_title {
-  background-color: red;
+  /* background-color: red; */
   height: 45%;
   width: 60%;
   align-self: center;
@@ -33,37 +52,41 @@ p {
 }
 
 #searchbar_div {
-  background-color: aliceblue;
+  background-color: rgba(0, 0, 142, 0.585);
   height: 45%;
   width: 90%;
   align-self: center;
-  border-radius: 50px;
-  padding: 10px 30px;
+  border-radius: 10px;
+  padding: 10px 10px;
 }
 #middle {
   height: 40%;
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
+  background-color: rgb(64, 64, 228);
 }
 #middle_title {
   height: 15%;
-  background-color: bisque;
+  display: flex;
 }
 #middle_lasts {
   display: flex;
   height: 85%;
-  background-color: blue;
 }
 .book {
-  height: 80%;
+  height: 200px;
   width: 200px;
-  background-color: beige;
+  background: white url("..\\images\\book.png") no-repeat;
+  background-size: contain;
   margin: 20px 15px;
   border-radius: 20px;
+  text-align: center;
+  line-height: 300px;
+  color: aliceblue;
+  text-shadow: 0 0 2px black;
 }
 .new {
-  background-color: greenyellow;
+  background-color: rgb(116, 243, 109);
 }
 .category {
   background-color: aliceblue;
@@ -72,14 +95,17 @@ p {
   list-style: none;
   text-align: center;
   line-height: 40px;
-  border: solid 1px black;
+  border: solid 1px white;
+}
+.category:hover {
+  background-color: darkgray;
 }
 ul {
   padding: 0px;
   margin: 0;
 }
 #add_new {
-  width: 240px;
+  width: 25%;
   display: flex;
   justify-content: center;
 }
@@ -90,6 +116,7 @@ ul {
   overflow: hidden;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* background: red; */
 }
 #middle_search {
   height: 85%;
@@ -97,19 +124,34 @@ ul {
 #search_text {
   height: 100%;
   width: 100%;
-  border-color: white;
-  outline: none;
   font-size: 30px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: rgb(213, 213, 213);
 }
 .last_added {
+  width: 75%;
+}
+.add_new{
+  width: 25%;
+}
+.add_new, .last_added {
+  align-self: center;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 .search_results {
   display: none;
 }
-#div_new_book.hidden {
+#div_new_book.hidden,
+#show_book.hidden {
   z-index: -1;
   opacity: 0;
   transition: 200ms;
+  position: absolute;
+  top: 0px;
 }
 #overlay.hidden {
   z-index: -1;
@@ -129,7 +171,7 @@ ul {
   opacity: 1;
   height: 80vh;
   width: 30vw;
-  background-color: yellow;
+  background-color: lightskyblue;
   margin: 80px auto;
   border-radius: 15px;
   padding: 10px;
@@ -138,21 +180,34 @@ ul {
   align-items: center;
   justify-content: space-around;
 }
+#show_book {
+  transition: 200ms;
+  opacity: 1;
+  margin: 80px auto;
+  height: 80vh;
+  width: 50vw;
+  background-color: lightskyblue;
+  border-radius: 15px;
+}
+
 textarea {
   resize: none;
 }
 #bottom {
   height: 40%;
-  background-color: aquamarine;
   display: flex;
 }
 #book_categories {
   width: 25%;
   overflow-y: scroll;
+  border-top-left-radius: 20px;
+  /* border: solid 1px; */
 }
 #category_books {
   width: 75%;
   display: -webkit-box;
   -webkit-box-align: center;
   overflow: overlay;
+  border-top-right-radius: 20px;
+  background-color: aliceblue;
 }
