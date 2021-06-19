@@ -20,7 +20,8 @@
     </div>
     <div id="middle">
         <div id="middle_title">
-            <p class="last_added">Last added</p>
+            <h2 class="add_new">Add new</h2>
+            <h2 class="last_added">Last added</h2>
             <p class="search_results">Search results</p>
         </div>
         <div id="middle_lasts">
@@ -40,7 +41,7 @@
     <div id="bottom">
         <div id="book_categories">
             <ul>
-                <li data-category="all" class="category">Show all</li>
+                <li data-category="all" class="category">Show all</li> <!-- here elements are sorted -->
                 <li data-category="Adventure" class="category">Adventure</li>
                 <li data-category="Drama" class="category">Drama</li>
                 <li data-category="Romance" class="category">Romance</li>
@@ -48,9 +49,6 @@
                 <li data-category="Action" class="category">Action</li>
                 <li data-category="Fantasy" class="category">Fantasy</li>
                 <li data-category="Horror" class="category">Horror</li>
-                <li data-category="Historical" class="category">Historical</li>
-                <li data-category="Children" class="category">Children</li>
-                <li data-category="Thriller" class="category">Thriller</li>
             </ul>
         </div>
         <div id="category_books">
@@ -73,25 +71,23 @@
             <label for="bGenre">Genre</label><br>
             <select name="bGenre" id="bGenre">
                 <option disabled selected value="">Select an option </option>
-                <option value="music">Adventure</option>
-                <option value="music">Drama</option>
-                <option value="music">Romance</option>
-                <option value="music">Sci-Fi</option>
-                <option value="music">Action</option>
-                <option value="music">Fantasy</option>
-                <option value="music">Horror</option>
-                <option value="music">Historical</option>
-                <option value="music">Children</option>
-                <option value="music">Thriller</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Drama">Drama</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci">Sci-Fi</option>
+                <option value="Action">Action</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
             </select><br><br>
             <input type="button" id="add_new_book" value="add new book">
             <br>
             <input type="button" id="cancel" value="cancel">
         </div>
+        <div id="show_book" class="hidden">
+            <input type="button" id="cancel" value="cancel">
+        </div>
     </div>
-    <div id="show_book">
 
-    </div>
 </body>
 <script src="src/script.js"></script>
 
