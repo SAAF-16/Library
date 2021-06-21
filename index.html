@@ -5,13 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHL3QZ7BR6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-EHL3QZ7BR6');
+    </script>
 </head>
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
 
 <body>
     <div id="top">
         <div id="main_title">
             <h1>My Library</h1>
+        </div>
+        <div id="read_log">
+            <p>Total Books:</p>
+            <p id="total_books"></p>
+            <p>Finished:</p>
+            <p id="finished_books"></p>
+            <p>Not Finished:</p>
+            <p id="unfinished_books"></p>
+
         </div>
         <!-- doppia funzione che se scrivo qualcosa cambia il prossimo div in un div di ricerca -->
         <div id="searchbar_div">
@@ -22,18 +42,13 @@
         <div id="middle_title">
             <h2 class="add_new">Add new</h2>
             <h2 class="last_added">Last added</h2>
-            <p class="search_results">Search results</p>
+            <p class="hide">Search results</p>
         </div>
         <div id="middle_lasts">
             <div id="add_new">
-                <div id="bAdd_new" class="book new"></div>
+                <div id="button_add_new" class="book new"></div>
             </div>
             <div id="last_added">
-
-            </div>
-        </div>
-        <div id="middle_search" class="search_results">
-            <div id="search_results">
 
             </div>
         </div>
@@ -41,7 +56,7 @@
     <div id="bottom">
         <div id="book_categories">
             <ul>
-                <li data-category="all" class="category">Show all</li> <!-- here elements are sorted -->
+                <li data-category="all" class="category selected">Show all</li> <!-- here elements are sorted -->
                 <li data-category="Adventure" class="category">Adventure</li>
                 <li data-category="Drama" class="category">Drama</li>
                 <li data-category="Romance" class="category">Romance</li>
@@ -51,25 +66,26 @@
                 <li data-category="Horror" class="category">Horror</li>
             </ul>
         </div>
-        <div id="category_books">
-
+        <div id="category_books_wrapper">
+            <div id="category_books">
+            </div>
         </div>
     </div>
     <div id="overlay" class="hidden">
-        <div id="div_new_book" class="hidden">
+        <form id="div_new_book" class="hidden">
             <label for="bTitle">Title</label><br>
-            <input type="text" id="bTitle" name="bTitle"><br>
-            <label for="bPages">Pages</label><br>
-            <input type="number" id="bPages" name="bPages"><br>
+            <input class="new_book_form" required type="text" id="bTitle" name="bTitle"><br>
+            <label for="bPages ">Pages</label><br>
+            <input class="new_book_form number_input" required type="number" id="bPages" name="bPages"><br>
             <label for="bDescription">Description</label><br>
-            <textarea id="bDescription" name="bDescription" cols="30" rows="20"
-                placeholder="Enter your comments or suggestions here.."></textarea><br>
+            <textarea class="new_book_form" required id="bDescription" name="bDescription" cols="30" rows="50"
+                placeholder="Enter book description"></textarea><br>
             <label for="bYear">Year</label><br>
-            <input type="number" id="bYear" name="bYear"><br>
+            <input class="new_book_form number_input" required type="number" id="bYear" name="bYear"><br>
             <label for="bAuthor">Author</label><br>
-            <input type="text" id="bAuthor" name="bAuthor"><br>
+            <input class="new_book_form" type="text" required id="bAuthor" name="bAuthor"><br>
             <label for="bGenre">Genre</label><br>
-            <select name="bGenre" id="bGenre">
+            <select class="new_book_form" required name="bGenre" id="bGenre">
                 <option disabled selected value="">Select an option </option>
                 <option value="Adventure">Adventure</option>
                 <option value="Drama">Drama</option>
@@ -79,14 +95,42 @@
                 <option value="Fantasy">Fantasy</option>
                 <option value="Horror">Horror</option>
             </select><br><br>
-            <input type="button" id="add_new_book" value="add new book">
+            <input class="new_book_form" type="submit" id="add_new_book" value="Add new book">
             <br>
-            <input type="button" id="cancel" value="cancel">
-        </div>
+            <input class="new_book_form cancel" type="button" value="EXIT">
+        </form>
         <div id="show_book" class="hidden">
-            <input type="button" id="cancel" value="cancel">
+            <p id="show_book_title">Book Details</p>
+            <div class="book"></div>
+            <p id="show_title">Title</p>
+            <p id="show_author">Author</p>
+            <div id="inline_book_details">
+                <p id="show_pages" class="show_book_main">pages</p>
+                <p id="show_genre" class="show_book_main">genre</p>
+                <p id="show_years" class="show_book_main">year</p>
+                <p class="show_book_sub">pages</p>
+                <p class="show_book_sub">genre</p>
+                <p class="show_book_sub">year</p>
+            </div>
+            <p id="show_description">description</p>
+            <div id="pages_info">
+                <label for="read_pages">Read pages</label>
+                <input type="number" id="read_pages" name="read_pages">
+                <label for="mark_read">
+                    Mark as read
+                    <input type="checkbox" id="mark_read" name="mark_read">
+                </label>
+
+
+            </div>
+            <input type="button" class="cancel" value="EXIT">
+            <input type="button" id="delete_book" value="Delete Book">
         </div>
     </div>
+    <div id="search_results" class="search_results not_searching">
+
+    </div>
+
 
 </body>
 <script src="src/script.js"></script>
