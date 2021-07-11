@@ -6,6 +6,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   height: 98vh;
   width: 96vw;
@@ -17,6 +19,7 @@ body {
   position: relative;
   min-height: 690px;
 }
+
 p {
   margin: 0;
 }
@@ -47,7 +50,7 @@ h2 {
 }
 
 #top {
-  height: 20%;
+  height: 150px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -56,8 +59,6 @@ h2 {
   border-top-right-radius: 20px;
 }
 #main_title {
-  /* background-color: red; */
-  height: 45%;
   width: 60%;
   align-self: center;
   text-align: center;
@@ -72,7 +73,7 @@ h2 {
   padding: 10px 10px;
 }
 #middle {
-  height: 40%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   background-color: rgb(64, 64, 228);
@@ -92,6 +93,23 @@ h2 {
   display: flex;
   height: 85%;
 }
+.status {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.finished {
+  background-color: green;
+}
+.reading {
+  background-color: yellow;
+}
+.not_started {
+  background-color: red;
+}
 .book {
   height: 200px;
   width: 200px;
@@ -105,6 +123,7 @@ h2 {
   text-shadow: 0 0 2px black;
   font-style: oblique;
   font-weight: 300;
+  position: relative;
 }
 .new {
   background-color: rgb(116, 243, 109);
@@ -145,7 +164,7 @@ ul {
   height: 85%;
 }
 .search_results {
-  height: calc(98vh - 20%);
+  height: calc(98vh - 24%);
   transition: 0.4s;
   position: absolute;
   background-color: aliceblue;
@@ -255,7 +274,7 @@ ul {
 }
 #inline_book_details {
   display: flex;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -303,12 +322,14 @@ input[type="checkbox"] {
   bottom: 1px;
 }
 #bottom {
-  height: 40%;
   display: flex;
   transition: 2s;
+  flex-grow: 1;
+  height: 256px;
 }
 #book_categories {
   width: 25%;
+  height: 100%;
   overflow-y: scroll;
   border-top-left-radius: 20px;
   background-color: aliceblue;
@@ -316,6 +337,7 @@ input[type="checkbox"] {
 }
 #category_books_wrapper {
   width: 75%;
+  height: 100%;
   padding: 15px;
   border-top-right-radius: 20px;
   background-color: aliceblue;
@@ -331,7 +353,7 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   scroll-padding-right: 25px;
 }
-#read_log{
+#read_log {
   background-color: rgba(12, 93, 164, 0.136);
   color: white;
   height: 20px;
@@ -343,8 +365,8 @@ input[type="checkbox"] {
   left: 20px;
   justify-content: space-evenly;
   align-items: center;
-  padding :10px;
+  padding: 10px;
 }
-.selected{
+.selected {
   background-color: rgb(187, 195, 201);
 }
