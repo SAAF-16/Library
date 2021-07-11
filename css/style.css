@@ -246,6 +246,7 @@ ul {
   right: 0;
 }
 #div_new_book {
+  min-height: 390px;
   position: relative;
   transition: 200ms;
   opacity: 1;
@@ -305,6 +306,7 @@ ul {
 }
 textarea {
   resize: none;
+  max-height: 100px;
 }
 #pages_info {
   margin: 5px;
