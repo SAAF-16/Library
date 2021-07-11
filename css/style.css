@@ -214,6 +214,9 @@ ul {
 .no_border {
   border: none;
 }
+#show_description{
+  text-align: center;
+}
 #show_book_title {
   color: black;
   font-size: 40px;
